@@ -30,6 +30,7 @@ import Call from "./Call";
 import WrapWithSnippet from "./WrapWithSnippet";
 import Deselect from "./Deselect";
 import Rewrap from "./Rewrap";
+import InsertSnippet from "./InsertSnippet";
 
 class Actions implements ActionRecord {
   constructor(private graph: Graph) {}
@@ -50,6 +51,7 @@ class Actions implements ActionRecord {
   insertEmptyLineAfter = new InsertEmptyLineBelow(this.graph);
   insertEmptyLineBefore = new InsertEmptyLineAbove(this.graph);
   insertEmptyLinesAround = new InsertEmptyLinesAround(this.graph);
+  insertSnippet = new InsertSnippet(this.graph);
   moveToTarget = new Move(this.graph);
   outdentLine = new OutdentLines(this.graph);
   pasteFromClipboard = new Paste(this.graph);
