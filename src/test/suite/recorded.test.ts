@@ -42,9 +42,7 @@ suite("recorded test cases", async function () {
     __dirname,
     "../../../src/test/suite/fixtures/recorded"
   );
-  const files = walkFilesSync(directory).filter(
-    (path) => path.endsWith(".yml") || path.endsWith(".yaml")
-  );
+  const files = walkFilesSync(directory);
   enableDebugLog(false);
 
   teardown(() => {
