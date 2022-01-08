@@ -42,6 +42,7 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
     'extends_clause[type]',
     'class_parameter[type]',
     'parameter[type]',
+    'function_definition[return_type]',
     // lazy_parameter_type
     // repeated_parameter_type
     // case_class_pattern
