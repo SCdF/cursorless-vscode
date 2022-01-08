@@ -38,7 +38,7 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
     'val_declaration[type]',
     'var_definition[type]',
     'var_declaration[type]',
-    'type_definition[type]', // FIXME: do we want to define type to grab type definitions, or types of type definitions (like everything else)
+    'type_definition',
     'extends_clause[type]',
     'class_parameter[type]',
     'parameter[type]',
@@ -50,7 +50,7 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
     'binding[type]',
 
   ], [':']),
-  value: leadingMatcher(['*[value]', '*[default_value]'], ['=']),
+  value: leadingMatcher(['*[value]', '*[default_value]', 'type_definition[type]'], ['=']),
   condition: conditionMatcher('*[condition]'),
 
   // UNIMPLEMENTED
