@@ -47,6 +47,7 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
     // repeated_parameter_type
     // case_class_pattern
     // typed_pattern
+    'binding[type]',
 
   ], [':']),
   value: leadingMatcher(['*[value]', '*[default_value]'], ['=']),
