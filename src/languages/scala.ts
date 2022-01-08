@@ -30,9 +30,23 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
 
   // MISSING: function/class/trait generics
   type: leadingMatcher([
-    '~generic_type[type]',
-    '~generic_type[return_type]',
-    '~generic_type[generic_type]',
+    'upper_bound[type]',
+    'lower_bound[type]',
+    'view_bound[type]',
+    'context_bound[type]',
+    'val_definition[type]',
+    'val_declaration[type]',
+    'var_definition[type]',
+    'var_declaration[type]',
+    'type_definition[type]', // FIXME: do we want to define type to grab type definitions, or types of type definitions (like everything else)
+    'extends_clause[type]',
+    'class_parameter[type]',
+    'parameter[type]',
+    // lazy_parameter_type
+    // repeated_parameter_type
+    // case_class_pattern
+    // typed_pattern
+
   ], [':']),
   value: leadingMatcher(['*[value]', '*[default_value]'], ['=']),
   condition: conditionMatcher('*[condition]'),
