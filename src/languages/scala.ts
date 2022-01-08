@@ -28,7 +28,6 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
   name: ['*[name]', '*[pattern]'],
   functionName: 'function_definition[name]',
 
-  // MISSING: function/class/trait generics
   type: leadingMatcher([
     'upper_bound[type]',
     'lower_bound[type]',
@@ -43,10 +42,7 @@ const nodeMatchers: Partial<Record<ScopeType, NodeMatcherAlternative>> = {
     'class_parameter[type]',
     'parameter[type]',
     'function_definition[return_type]',
-    // lazy_parameter_type
-    // repeated_parameter_type
-    // case_class_pattern
-    // typed_pattern
+    'typed_pattern[type]',
     'binding[type]',
 
   ], [':']),
